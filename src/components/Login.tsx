@@ -2,7 +2,11 @@ import { GoogleLogin } from 'react-google-login'
 import { useNavigate } from 'react-router-dom';
 const client_id="392980597886-hur0lq3lf73k39jea3t2mgvotnv776ut.apps.googleusercontent.com"
 
-function Login({ onLoginSuccess }){
+interface LoginProps {
+    onLoginSuccess?: () => void;
+}
+
+function Login({ onLoginSuccess }: LoginProps){
     const navigate=useNavigate();
     const onSuccess = (res:any) => {
         console.log("Login Successful", res.profileObj);

@@ -1,7 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Neucha&family=Quicksand:wght@300..700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+/* linear-gradient(to right, #4b066b, #6d076d, #270348) */
+
+body {
+  background: black;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes bottom-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-bottom-to-top {
+  animation: bottom-to-top 0.8s ease-out forwards;
+}
+
+p {
+  @apply animate-bottom-to-top;
+}
+
+h1 {
+  @apply animate-bottom-to-top;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(to right, rgba(75, 6, 107, 0.3), rgba(109, 7, 109, 0.3));
+  backdrop-filter: blur(8px);
 }

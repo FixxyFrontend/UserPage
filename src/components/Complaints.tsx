@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Complaints() {
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
   const [complaint, setComplaint] = useState('');
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
@@ -57,24 +57,24 @@ export default function Complaints() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-r from-[#0acffe] to-[#495aff] flex flex-col items-center p-10'>
+    <div className='min-h-screen  flex flex-col items-center p-10'>
       <ToastContainer />
-      <div className='flex flex-col items-center gap-8 p-8 bg-white rounded-lg shadow-lg max-w-3xl'>
-        <h1 className='text-5xl font-semibold text-gray-800 bg-gray-100 p-6 rounded-full shadow-md max-sm:text-xl'>
-          Post your complaints here
+      <div className='flex flex-col items-center gap-8 p-8 bg-zinc-900 rounded-lg shadow-lg max-w-3xl'>
+        <h1 className='text-5xl font-semibold text-zinc-200 bg-zinc-700 p-6 rounded-full shadow-md max-sm:text-xl'>
+          Post your <span className=' text-orange-500'>complaints</span> here
         </h1>
-        <p className='text-xl text-gray-600 text-center'>
+        <p className='text-xl text-zinc-200 text-center'>
           The complaint will be forwarded to the Admin page and eventually be resolved.
         </p>
-        <form onSubmit={onSubmit} className='flex flex-col gap-6 w-full max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-lg'>
+        <form onSubmit={onSubmit} className='flex flex-col gap-6 w-full max-w-4xl mx-auto p-6 bg-zinc-900 rounded-lg shadow-lg'>
           <div className='flex flex-col gap-4'>
-            <label htmlFor="" className='text-2xl font-semibold text-gray-800'>Name :</label>
-            <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Enter your name' className='p-4 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow' />
-            <label htmlFor="" className='text-2xl font-semibold text-gray-800'>Room Number :</label>
+            <label htmlFor="" className='text-2xl font-semibold text-zinc-200'>Name :</label>
+            <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder='Enter your name' className='p-4 rounded-lg border  border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow' />
+            <label htmlFor="" className='text-2xl font-semibold text-zinc-200'>Room Number :</label>
             <input type="text" value={room} onChange={e => setRoom(e.target.value)} placeholder='Enter your Room No' className='p-4 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow' />
-            <label htmlFor="" className='text-2xl font-semibold text-gray-800'>Floor :</label>
+            <label htmlFor="" className='text-2xl font-semibold text-gray-200'>Floor :</label>
             <input type="text" value={floor} onChange={e => setFloor(e.target.value)} placeholder='Enter your floor' className='p-4 rounded-lg border border-gray-300 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow' />
-            <label htmlFor="complaint" className='text-2xl font-semibold text-gray-800'>Complaint :</label>
+            <label htmlFor="complaint" className='text-2xl font-semibold text-gray-200'>Complaint :</label>
             <textarea
               name="complaint"
               id="complaint"

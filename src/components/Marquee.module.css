@@ -1,0 +1,22 @@
+.marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(to right, rgba(75, 6, 107, 0.3), rgba(109, 7, 109, 0.3));
+    backdrop-filter: blur(8px);
+  }
+  
+  .marqueeContent {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0.75rem 0;
+    animation: marquee linear;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
