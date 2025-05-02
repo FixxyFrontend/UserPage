@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { gapi } from 'gapi-script';
 import Login from '../components/Login';
 import Logout from '../components/Logout'; 
@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import About from './About';
 import About2 from './About2';
 import Footer from './Footer';
-import { Marquee } from './Marquee';
+
 
 const client_id = "392980597886-hur0lq3lf73k39jea3t2mgvotnv776ut.apps.googleusercontent.com";
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import problem from '../assets/problem.png';
+
 import service from '../assets/service.png'
 
 const About = () => {
